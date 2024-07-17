@@ -1,0 +1,33 @@
+#include<iostream>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+int main()
+{
+   srand(static_cast<unsigned int>(time(0)));
+   int NUM=rand() % 100 + 1;
+   int guess;
+   int attempts=0;
+   cout<<"Let's Start the game 'GUESS THE NUM'"<<endl;
+   cout<<"NOTE:The NUM is between 1 to 100."<<endl;
+   do
+   {
+     cout<<"Enter you guess:";
+     cin>>guess;
+     attempts++;
+     if(guess>NUM)
+     {
+        cout<<"Too HIGH!"<<endl;
+    }
+    else if(guess<NUM)
+    {
+        cout<<"Too LOW!"<<endl;
+    }
+    else 
+    {
+        cout<<"CONGRATULATIONS!!You guessed the NUM right."<<endl;
+    }
+   }
+   while(guess!=NUM);
+   return 0;
+}
